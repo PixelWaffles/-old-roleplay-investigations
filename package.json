@@ -1,0 +1,37 @@
+{
+  "name": "roleplay-investigations",
+  "version": "0.0.0",
+  "private": "true",
+  "description": "A roleplaying framework for aspiring, eccentric and insane attorneys.",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ginsederp/roleplay-investigations.git"
+  },
+  "keywords": [
+    "roleplay",
+    "role-play",
+    "role",
+    "play",
+    "investigations",
+    "investigation",
+    "chat",
+    "game"
+  ],
+  "author": {
+    "name": "ginsederp",
+    "email": "ginsederp@derpymail.org"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ginsederp/roleplay-investigations/issues"
+  },
+  "homepage": "https://github.com/ginsederp/roleplay-investigations",
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}
