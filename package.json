@@ -1,6 +1,6 @@
 {
   "name": "roleplay-investigations",
-  "version": "0.0.0",
+  "version": "0.1.0-dev",
   "private": "true",
   "description": "A roleplaying framework for aspiring, eccentric and insane attorneys.",
   "main": "index.js",
