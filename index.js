@@ -17,6 +17,9 @@ app.set(
   || '3000'
 );
 
+// Loading routes
+app.use('/', require('./routes/home'));
+
 
 http.listen(app.get('port'), app.get('ip'), function() {
   console.log("Server listening on " + app.get('ip') + ":" + app.get('port'));
