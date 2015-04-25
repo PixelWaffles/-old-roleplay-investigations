@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
+var path = require('path');
 var consolidate = require('consolidate');
 
 // Server IP
