@@ -1,5 +1,6 @@
 var app = require('express')();
 var http = require('http').Server(app);
+var consolidate = require('consolidate');
 
 // Server IP
 app.set(
@@ -16,6 +17,11 @@ app.set(
   || process.env.PORT
   || '3000'
 );
+
+// View Engine
+app.engine('hjs', consolidate.hogan);
+app.set('view engine', 'hjs');
+app.set('views', path.join(__dirname, '/views'));
 
 // Loading routes
 app.use('/', require('./routes/home'));
