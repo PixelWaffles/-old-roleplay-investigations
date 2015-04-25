@@ -1,4 +1,5 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var consolidate = require('consolidate');
 
@@ -17,6 +18,9 @@ app.set(
   || process.env.PORT
   || '3000'
 );
+
+// Static Directory
+app.use(express.static(path.join(__dirname, '/public')));
 
 // View Engine
 app.engine('hjs', consolidate.hogan);
