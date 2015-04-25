@@ -33,5 +33,8 @@
   "homepage": "https://github.com/ginsederp/roleplay-investigations",
   "engines": {
     "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
   }
 }
