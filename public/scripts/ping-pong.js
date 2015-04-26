@@ -13,7 +13,9 @@ $(document).ready( function($) {
   });
 
   socket.on('pong-client', function(_data) {
-    $('#out-pong').append(_data + '<br />');
-    $('#out-pong').fadeIn('100').fadeOut('100');
+    if(_data.pong){
+      $('#out-pong').append('pong <br />');
+      $('#out-pong').fadeIn('100').fadeOut('100');
+    }
   });
 });
