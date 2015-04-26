@@ -20,8 +20,6 @@ app.set(
   || '3000'
 );
 
-// Static Directory
-app.use(express.static(path.join(__dirname, '/public')));
 
 // View Engine
 app.engine('hjs', consolidate.hogan);
@@ -31,6 +29,10 @@ app.set('views', path.join(__dirname, '/views'));
 // Loading routes
 app.use('/', require('./routes/home'));
 require('./sockets/io').attach(http);
+
+// Static Directory
+app.use(express.static(path.join(__dirname, '/public')));
+
 
 http.listen(app.get('port'), app.get('ip'), function() {
   console.log("Server listening on " + app.get('ip') + ":" + app.get('port'));
