@@ -30,7 +30,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 // Loading routes
 app.use('/', require('./routes/home'));
-
+require('./sockets/io').attach(http);
 
 http.listen(app.get('port'), app.get('ip'), function() {
   console.log("Server listening on " + app.get('ip') + ":" + app.get('port'));

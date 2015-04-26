@@ -1,7 +1,7 @@
 var router = require('express').Router();
 
 router.get('/', function(_req, _res) {
-  _res.send('Hompage GET!');
+  _res.render('home');
   return;
 });
 
