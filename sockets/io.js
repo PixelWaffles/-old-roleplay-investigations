@@ -10,6 +10,8 @@ io.on('connection', function(_socket) {
     + getClientId(_socket)
     + "."
   );
+
+  require('./ping-server')(_socket);
 });
 
 function getClientId(_socket) {
