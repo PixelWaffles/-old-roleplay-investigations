@@ -15,8 +15,8 @@ app.set(
 // Server Port
 app.set(
   'port'
-, process.env.OPENSHIFT_NODEJS_PORT
-  || process.env.PORT
+, process.env.PORT
+  || process.env.OPENSHIFT_NODEJS_PORT
   || '3000'
 );
 
