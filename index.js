@@ -7,8 +7,8 @@ var consolidate = require('consolidate');
 // Server IP
 app.set(
   'ip'
-, process.env.OPENSHIFT_NODEJS_IP
-  || process.env.IP
+, process.env.IP
+  || process.env.OPENSHIFT_NODEJS_IP
   || '0.0.0.0'
 );
 
