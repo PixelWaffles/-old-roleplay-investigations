@@ -17,16 +17,16 @@ $(document).ready( function($) {
   $messageForm.submit(function(_event) {
     _event.preventDefault();
 
-    var message;
+    var message = $messageBox.val();
+    var username = $usernameBox.val();
 
     if( $usernameBox.val() === '') {
-      message = '<b>' + 'anonymous' + ': ' + '</b>' + $messageBox.val();
-    } else {
-      message = '<b>' + $usernameBox.val() + ': ' + '</b>' + $messageBox.val();
+      username = 'anonymous';
     }
 
     socket.emit('message-server', {
       'time': Date.now()
+    , 'user': username
     , 'message': message
     });
     
@@ -34,6 +34,6 @@ $(document).ready( function($) {
   });
 
   socket.on('message-client', function(_data) {
-    $messageDisplay.append(_data.message + '<br/>');
+    $messageDisplay.append('<b>' + _data.user + ':' + '</b>' + _data.message + '<br/>');
   });
 });
