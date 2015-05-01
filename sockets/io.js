@@ -12,6 +12,7 @@ io.on('connection', function(_socket) {
   );
 
   require('./ping-server')(_socket);
+  require('./messager')(_socket);
 });
 
 function getClientId(_socket) {
