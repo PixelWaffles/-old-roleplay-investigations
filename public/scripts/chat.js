@@ -57,6 +57,11 @@ $(document).ready( function($) {
   });
 
   socket.on('message-client', function(_data) {
+    if(_data.error) {
+      $messageDisplay.append('<b>' + _data.error + '</b>' + '<br/>');
+      return;
+    }
+
     $messageDisplay.append('<b>' + _data.user + ':' + '</b>' + _data.message + '<br/>');
   });
 });
