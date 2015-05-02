@@ -8,6 +8,7 @@
 
     <!--Login-->
     <div id='login-wrap'>
+      <p id='login-error-display'>&nbsp;</p>
       <form id='send-login'>
           <input size='32' maxLength='32' id='username-box' placeholder='username'/>
           <input type='submit' />

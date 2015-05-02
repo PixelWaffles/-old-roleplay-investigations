@@ -10,6 +10,7 @@ $(document).ready( function($) {
 
   var $loginWrap = $('#login-wrap')
     , $chatWrap = $('#chat-wrap')
+    , $loginError = $('#login-error-display')
     , $messageForm = $('#send-message')
     , $loginForm = $('#send-login')
     , $usernameBox = $('#username-box')
@@ -50,6 +51,8 @@ $(document).ready( function($) {
       // Switch to chat view.
       $loginWrap.hide();
       $chatWrap.show();
+    } else {
+      $loginError.text(_data.error);
     }
   });
 
