@@ -7,7 +7,7 @@ function login(_user)
   if(_user.length <= 0) {
     return {
       'successful': false
-    , 'error': 'EMPTY_USER'
+    , 'error': 'ERR_EMPTY_USER'
     , 'message': 'User login unsuccessful. User field is empty.'
     };
   }
@@ -17,7 +17,7 @@ function login(_user)
     if(socket['$user'] === _user) {
       return {
         'successful': false
-      , 'error': 'DUPLICATE_USER'
+      , 'error': 'ERR_DUPLICATE_USER'
       , 'message': 'User login unsuccessful. A user with the same name already exist.'
       };
     }
