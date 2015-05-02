@@ -11,7 +11,18 @@ function login(_user)
     , 'message': 'User login unsuccessful. User field is empty.'
     };
   }
-  
+  for(socketId in io.engine.clients) {
+    var socket = io.sockets.connected[socketId];
+    
+    if(socket['$user'] === _user) {
+      return {
+        'successful': false
+      , 'error': 'DUPLICATE_USER'
+      , 'message': 'User login unsuccessful. A user with the same name already exist.'
+      };
+    }
+  }
+
   return {
     'successful': true
   , 'message': 'User '+ _user +' logged in successful.'
