@@ -7,7 +7,7 @@ function handleMessage(_socket) {
 
     io.sockets.emit('message-client', {
       'time': Date.now() // Time of Server on Message Sent.
-    , 'user': escape(_data.user)
+    , 'user': escape(_socket['$user'])
     , 'message': escape(_data.message)
     });
     return;

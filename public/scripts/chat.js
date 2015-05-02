@@ -15,9 +15,7 @@ $(document).ready( function($) {
     , $usernameBox = $('#username-box')
     , $messageBox = $('#message-box')
     , $messageDisplay = $('#chat-display')
-    ;
-
-  var username;
+  ;
 
   // Start in login view.
   $chatWrap.hide();
@@ -26,11 +24,12 @@ $(document).ready( function($) {
   $loginForm.submit(function(_event) {
     _event.preventDefault();
 
-    username = $usernameBox.val();
+    socket.emit('user-login', {
+      'time': Date.now()
+    , 'user': $usernameBox.val()
+    });
 
-    // Switch to chat view.
-    $loginWrap.hide();
-    $chatWrap.show();
+    
   });
 
   $messageForm.submit(function(_event) {
@@ -38,17 +37,20 @@ $(document).ready( function($) {
 
     var message = $messageBox.val();
 
-    if( $usernameBox.val() === '') {
-      username = 'anonymous';
-    }
-
     socket.emit('message-server', {
       'time': Date.now()
-    , 'user': username
     , 'message': message
     });
     
     $messageBox.val('');
+  });
+
+  socket.on('user-login-response', function(_data) {
+    if(_data.successful === true) {
+      // Switch to chat view.
+      $loginWrap.hide();
+      $chatWrap.show();
+    }
   });
 
   socket.on('message-client', function(_data) {
