@@ -58,10 +58,10 @@ $(document).ready( function($) {
 
   socket.on('message-client', function(_data) {
     if(_data.error) {
-      $messageDisplay.append('<b>' + _data.error + '</b>' + '<br/>');
+      $messageDisplay.append('<p>' + '<b>' + _data.error + '</b>' + '</p>');
       return;
     }
 
-    $messageDisplay.append('<b>' + _data.user + ':' + '</b>' + _data.message + '<br/>');
+    $messageDisplay.append('<p>' + '<b>' + _data.user + ':' + '</b>' + _data.message + '</p>');
   });
 });
