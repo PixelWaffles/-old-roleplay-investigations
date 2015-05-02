@@ -8,17 +8,35 @@
 $(document).ready( function($) {
   var socket = io();
 
-  var $messageForm = $('#send-message')
+  var $loginWrap = $('#login-wrap')
+    , $chatWrap = $('#chat-wrap')
+    , $messageForm = $('#send-message')
+    , $loginForm = $('#send-login')
     , $usernameBox = $('#username-box')
     , $messageBox = $('#message-box')
     , $messageDisplay = $('#chat-display')
     ;
 
+  var username;
+
+  // Start in login view.
+  $chatWrap.hide();
+  $loginWrap.show();
+
+  $loginForm.submit(function(_event) {
+    _event.preventDefault();
+
+    username = $usernameBox.val();
+
+    // Switch to chat view.
+    $loginWrap.hide();
+    $chatWrap.show();
+  });
+
   $messageForm.submit(function(_event) {
     _event.preventDefault();
 
     var message = $messageBox.val();
-    var username = $usernameBox.val();
 
     if( $usernameBox.val() === '') {
       username = 'anonymous';

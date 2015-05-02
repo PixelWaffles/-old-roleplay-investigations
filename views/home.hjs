@@ -6,13 +6,22 @@
     <button id='button-ping'>Ping!</button>
     <p id='out-pong'></p>
 
+    <!--Login-->
+    <div id='login-wrap'>
+      <form id='send-login'>
+          <input size='32' maxLength='32' id='username-box' placeholder='username'/>
+          <input type='submit' />
+      </form>
+    </div>
+
     <!--Chat-->
-    <div class='chat-log-display' id='chat-display'></div>
-    <form id='send-message'>
-      <input size='16' maxLength='16' id='username-box' placeholder='username'/>
-      <input size='64' maxLength= '128' id='message-box' placeholder='message' />
-      <input type='submit' />
-    </form>
+    <div id='chat-wrap'>
+      <div class='chat-log-display' id='chat-display'></div>
+      <form id='send-message'>
+        <input size='64' maxLength= '128' id='message-box' placeholder='message' />
+        <input type='submit' />
+      </form>
+    </div>
 
     <!--Dependencies-->
     <script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
