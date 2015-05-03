@@ -62,6 +62,6 @@ $(document).ready( function($) {
       return;
     }
 
-    $messageDisplay.append('<p>' + '<b>' + _data.user + ':' + '</b>' + _data.message + '</p>');
+    $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
   });
 });
