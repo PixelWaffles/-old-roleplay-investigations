@@ -9,3 +9,7 @@ rp.html.DynamicDiv = function(_elementId, _para) {
 
   return;
 };
+
+rp.html.DynamicDiv.prototype.drawHtml = function() {
+  // Empty function to be overridden.
+};
