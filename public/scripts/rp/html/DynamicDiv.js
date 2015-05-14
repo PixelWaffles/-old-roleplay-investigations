@@ -4,12 +4,13 @@ rp.html = rp.html || {};
 
 // Class
 rp.html.DynamicDiv = function(_elementId, _para) {
-  this.$div = $('#'+_elementId);
+  this.html = {};
+  this.html.div = $('#'+_elementId)[0];
   this.para = _para;
 
   return;
 };
 
-rp.html.DynamicDiv.prototype.drawHtml = function() {
+rp.html.DynamicDiv.prototype.initHtml = function() {
   // Empty function to be overridden.
 };

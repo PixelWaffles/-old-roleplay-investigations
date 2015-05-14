@@ -11,3 +11,7 @@ rp.html.ListDiv.prototype.constructor = function(_elementId, _para) {
 
   return;
 };
+
+rp.html.ListDiv.prototype.initHtml = function() {
+  //TODO Write html initialization.
+};
