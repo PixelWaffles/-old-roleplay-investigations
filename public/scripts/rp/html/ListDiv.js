@@ -13,5 +13,16 @@ rp.html.ListDiv.prototype = Object.create(rp.html.DynamicDiv.prototype);
 rp.html.ListDiv.prototype.parent = rp.html.DynamicDiv.prototype;
 
 rp.html.ListDiv.prototype.initHtml = function() {
-  //TODO Write html initialization.
+  this.parent.initHtml.call();
+
+  this.html.list = document.createElement('dl');
+  return;
+};
+
+rp.html.ListDiv.prototype.addToList = function(_term) {
+  var termToAdd = document.createElement('dt');
+  termToAdd.innerHTML = _term;
+
+  $(this.html.list).append(termToAdd);
+  return;
 };
