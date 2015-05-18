@@ -14,6 +14,7 @@ io.on('connection', function(_socket) {
   require('./ping-server')(_socket);
   require('./messager')(_socket);
   require('./user-login')(_socket);
+  require('./user-signing')(_socket);
 });
 
 function getClientId(_socket) {
