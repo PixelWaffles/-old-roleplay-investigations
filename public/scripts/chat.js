@@ -64,4 +64,10 @@ $(document).ready( function($) {
 
     $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
   });
+
+  socket.on('user-signing', function(_data) {
+    if(_data.type) {
+      $messageDisplay.append('<p>' + '<b>' + _data.user + ' joined' + '</b>' + '</p>');
+    }
+  });
 });
