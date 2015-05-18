@@ -1,4 +1,5 @@
 var io = require('./io');
+var events = require('../events');
 
 var escape = require('escape-html');
 
@@ -35,6 +36,7 @@ function handleLogin(_socket) {
 
     if(loginResponse.successful === true) {
       _socket['$user'] = _data.user;
+      events.emit('user-sign-in-successful', _socket['$user']);
     }
 
     // Concat time of Server on login response.
