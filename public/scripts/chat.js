@@ -66,8 +66,10 @@ $(document).ready( function($) {
   });
 
   socket.on('user-signing', function(_data) {
-    if(_data.type) {
+    if(_data.type === 'SIGNIN') {
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' joined' + '</b>' + '</p>');
+    } else if (_data.type === 'SIGNOUT') {
+      $messageDisplay.append('<p>' + '<b>' + _data.user + ' left' + '</b>' + '</p>');
     }
   });
 });
