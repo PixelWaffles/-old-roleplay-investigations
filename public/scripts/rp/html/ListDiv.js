@@ -4,7 +4,7 @@ rp.html = rp.html || {};
 
 // Class
 rp.html.ListDiv = function(_elementId, _para) {
-  this.parent.call(_elementId, _para);
+  this.parent.constructor.call(this, _elementId, _para);
 
   return;
 };
@@ -13,7 +13,7 @@ rp.html.ListDiv.prototype = Object.create(rp.html.DynamicDiv.prototype);
 rp.html.ListDiv.prototype.parent = rp.html.DynamicDiv.prototype;
 
 rp.html.ListDiv.prototype.initHtml = function() {
-  this.parent.initHtml.call();
+  this.parent.initHtml.call(this);
 
   this.html.list = document.createElement('dl');
   return;
