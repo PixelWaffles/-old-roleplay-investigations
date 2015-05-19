@@ -16,6 +16,8 @@ $(document).ready( function($) {
     , $usernameBox = $('#username-box')
     , $messageBox = $('#message-box')
     , $messageDisplay = $('#chat-display')
+    , $userlistWrap = $('#userlist-wrap')
+    , $userlist = $('#userlist')
   ;
 
   // Start in login view.
@@ -46,6 +48,10 @@ $(document).ready( function($) {
     $messageBox.val('');
   });
 
+  // Userlist
+  var userlist = new rp.html.ListDiv($userlist.prop('id'), {});
+  userlist.initHtml();
+
   socket.on('user-login-response', function(_data) {
     if(_data.successful === true) {
       // Switch to chat view.
@@ -67,6 +73,7 @@ $(document).ready( function($) {
 
   socket.on('user-signing', function(_data) {
     if(_data.type === 'SIGNIN') {
+      userlist.addToList(_data.user);
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' joined' + '</b>' + '</p>');
     } else if (_data.type === 'SIGNOUT') {
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' left' + '</b>' + '</p>');
