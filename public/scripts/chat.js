@@ -22,6 +22,7 @@ $(document).ready( function($) {
 
   // Start in login view.
   $chatWrap.hide();
+  $userlistWrap.hide();
   $loginWrap.show();
 
   $loginForm.submit(function(_event) {
@@ -57,6 +58,7 @@ $(document).ready( function($) {
       // Switch to chat view.
       $loginWrap.hide();
       $chatWrap.show();
+      $userlistWrap.show();
     } else {
       $loginError.text(_data.error);
     }
