@@ -16,6 +16,7 @@ rp.html.ListDiv.prototype.initHtml = function() {
   this.parent.initHtml.call(this);
 
   this.html.list = document.createElement('dl');
+  $(this.html.div).append(this.html.list);
   return;
 };
 
