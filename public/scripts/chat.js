@@ -76,6 +76,7 @@ $(document).ready( function($) {
       userlist.addToList(_data.user);
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' joined' + '</b>' + '</p>');
     } else if (_data.type === 'SIGNOUT') {
+      userlist.removeFromList(_data.user);
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' left' + '</b>' + '</p>');
     }
   });

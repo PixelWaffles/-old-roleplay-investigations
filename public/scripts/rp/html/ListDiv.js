@@ -27,3 +27,18 @@ rp.html.ListDiv.prototype.addToList = function(_term) {
   $(this.html.list).append(termToAdd);
   return;
 };
+
+rp.html.ListDiv.prototype.removeFromList = function(_term) {
+  var termToRemove;
+
+  $(this.html.list).children('dt').each(function(_index) {
+    if(this.innerHTML === _term) {
+      $(this).remove();
+      return false;
+    }
+
+    return true;
+  });
+  
+  return;
+};
