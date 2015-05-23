@@ -24,6 +24,12 @@
       </form>
     </div>
 
+    <!--Userlist-->
+    <div id='userlist-wrap'>
+      <p><b>Userlist</b></p>
+      <div id='userlist'></div>
+    </div>
+
     <!--Dependencies-->
     <script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
     <script src='/socket.io/socket.io.js'></script>
@@ -31,5 +37,7 @@
     <!--scripts-->
     <script src='/scripts/ping-pong.js'></script>
     <script src='/scripts/chat.js'></script>
+    <script src='/scripts/rp/html/DynamicDiv.js'></script>
+    <script src='/scripts/rp/html/ListDiv.js'></script>
   </body>
 </html>

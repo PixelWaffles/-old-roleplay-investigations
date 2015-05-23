@@ -15,6 +15,7 @@ io.on('connection', function(_socket) {
   require('./messager')(_socket);
   require('./user-login')(_socket);
   require('./user-signing')(_socket);
+  require('./userlist')(_socket);
 });
 
 function getClientId(_socket) {

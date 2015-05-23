@@ -16,10 +16,13 @@ $(document).ready( function($) {
     , $usernameBox = $('#username-box')
     , $messageBox = $('#message-box')
     , $messageDisplay = $('#chat-display')
+    , $userlistWrap = $('#userlist-wrap')
+    , $userlist = $('#userlist')
   ;
 
   // Start in login view.
   $chatWrap.hide();
+  $userlistWrap.hide();
   $loginWrap.show();
 
   $loginForm.submit(function(_event) {
@@ -46,11 +49,16 @@ $(document).ready( function($) {
     $messageBox.val('');
   });
 
+  // Userlist
+  var userlist = new rp.html.ListDiv($userlist.prop('id'), {});
+  userlist.initHtml();
+
   socket.on('user-login-response', function(_data) {
     if(_data.successful === true) {
       // Switch to chat view.
       $loginWrap.hide();
       $chatWrap.show();
+      $userlistWrap.show();
     } else {
       $loginError.text(_data.error);
     }
@@ -65,10 +73,20 @@ $(document).ready( function($) {
     $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
   });
 
+  socket.on('userlist', function(_data) {
+    for(var i = 0; i < _data.users.length; i++) {
+      userlist.addToList(_data.users[i].name);
+    }
+
+    return;
+  });
+
   socket.on('user-signing', function(_data) {
     if(_data.type === 'SIGNIN') {
+      userlist.addToList(_data.user);
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' joined' + '</b>' + '</p>');
     } else if (_data.type === 'SIGNOUT') {
+      userlist.removeFromList(_data.user);
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' left' + '</b>' + '</p>');
     }
   });
