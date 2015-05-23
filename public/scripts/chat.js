@@ -73,6 +73,14 @@ $(document).ready( function($) {
     $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
   });
 
+  socket.on('userlist', function(_data) {
+    for(var i = 0; i < _data.users.length; i++) {
+      userlist.addToList(_data.users[i].name);
+    }
+
+    return;
+  });
+
   socket.on('user-signing', function(_data) {
     if(_data.type === 'SIGNIN') {
       userlist.addToList(_data.user);
