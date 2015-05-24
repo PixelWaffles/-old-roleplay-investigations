@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "index.js",
-    "postinstall": "if [ -d \"${OPENSHIFT_REPO_DIR}\" ]; then (export HOME=\"${OPENSHIFT_REPO_DIR}\"; cd \"${OPENSHIFT_REPO_DIR}\") fi; ./node_modules/bower/bin/bower install",
+    "postinstall": "if [ -d \"$OPENSHIFT_REPO_DIR\" ]; then (export HOME=\"$OPENSHIFT_REPO_DIR\"; cd \"$OPENSHIFT_REPO_DIR\") fi; ./node_modules/bower/bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bower": "bower"
   },
