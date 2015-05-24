@@ -31,6 +31,7 @@ app.use('/', require('./routes/home'));
 require('./sockets/io').attach(http);
 
 // Static Directory
+app.use('/bower_components', express.static(path.join(__dirname, '/bower_components')));
 app.use(express.static(path.join(__dirname, '/public')));
 
 

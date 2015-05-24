@@ -1,0 +1,21 @@
+{
+  "private": "true",
+  "name": "roleplay-investigations",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ginsederp/roleplay-investigations",
+  "authors": [
+    "ginsederp <ginsederp@derpymail.org>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "~2.1.4"
+  }
+}

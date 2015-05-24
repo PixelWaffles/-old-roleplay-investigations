@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "if [ -d \"$OPENSHIFT_REPO_DIR\" ]; then (echo \"INFO: Openshift repo directory detected, switching HOME to $OPENSHIFT_REPO_DIR/..\"; export HOME=\"$OPENSHIFT_REPO_DIR\"/..; bower install) else (bower install) fi",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bower": "bower"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,7 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
+    "bower": "^1.4.1",
     "consolidate": "^0.12.1",
     "escape-html": "^1.0.1",
     "express": "^4.12.3",
