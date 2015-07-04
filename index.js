@@ -27,6 +27,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 
+// Style Pre-processor
+var lessMiddleware = require('less-middleware');
+app.use(lessMiddleware(path.join(__dirname, '/public')));
+
 // View Engine
 app.engine('hjs', consolidate.hogan);
 app.set('view engine', 'hjs');
