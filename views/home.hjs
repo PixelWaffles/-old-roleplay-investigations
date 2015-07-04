@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel='stylesheet' type='text/css' href='styles/main.css'
   </head>
 
   <body>
@@ -32,6 +33,7 @@
 
     <!--Dependencies-->
     <script src='bower_components/jQuery/dist/jquery.js'></script>
+    <script src='bower_components/bootstrap/dist/js/bootstrap.js'></script>
     <script src='/socket.io/socket.io.js'></script>
 
     <!--scripts-->
