@@ -9,20 +9,19 @@ $(document).ready( function($) {
   var socket = io();
 
   var $loginWrap = $('#login-wrap')
-    , $chatWrap = $('#chat-wrap')
+    , $appWrap = $('#app-wrap')
     , $loginError = $('#login-error-display')
     , $messageForm = $('#send-message')
     , $loginForm = $('#send-login')
     , $usernameBox = $('#username-box')
     , $messageBox = $('#message-box')
     , $messageDisplay = $('#chat-display')
-    , $userlistWrap = $('#userlist-wrap')
     , $userlist = $('#userlist')
   ;
 
   // Start in login view.
-  $chatWrap.hide();
-  $userlistWrap.hide();
+  $appWrap.hide();
+  
   $loginWrap.show();
 
   $loginForm.submit(function(_event) {
@@ -57,8 +56,8 @@ $(document).ready( function($) {
     if(_data.successful === true) {
       // Switch to chat view.
       $loginWrap.hide();
-      $chatWrap.show();
-      $userlistWrap.show();
+      $appWrap.show();
+      
     } else {
       $loginError.text(_data.error);
     }

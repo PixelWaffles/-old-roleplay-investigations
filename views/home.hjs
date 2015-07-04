@@ -16,19 +16,21 @@
       </form>
     </div>
 
-    <!--Chat-->
-    <div id='chat-wrap'>
-      <div class='chat-log-display' id='chat-display'></div>
-      <form id='send-message'>
-        <input size='64' maxLength= '128' id='message-box' placeholder='message' />
-        <input type='submit' />
-      </form>
-    </div>
+    <div id='app-wrap'>
+      <!--Chat-->
+      <div id='chat-wrap'>
+        <div class='chat-log-display' id='chat-display'></div>
+        <form id='send-message'>
+          <input size='64' maxLength= '128' id='message-box' placeholder='message' />
+          <input type='submit' />
+        </form>
+      </div>
 
-    <!--Userlist-->
-    <div id='userlist-wrap'>
-      <p><b>Userlist</b></p>
-      <div id='userlist'></div>
+      <!--Userlist-->
+      <div id='userlist-wrap'>
+        <p><b>Userlist</b></p>
+        <div id='userlist'></div>
+      </div>
     </div>
 
     <!--Dependencies-->
