@@ -18,17 +18,17 @@
 
     <div class='container-fluid' id='app-wrap'>
       <div class='row'>
-        <div class='col-sm-3' style='background-color:lavender'>
+        <div class='col-sm-3 no-horizontal-padding' style='background-color:lavender'>
           <!--TranscriptLog-->
           <div class='embed-responsive wbh-8by9' id='transcript-display'></div>
         </div>
 
-        <div class='col-sm-6' style='background-color:lavenderblush'>
+        <div class='col-sm-6 no-horizontal-padding' style='background-color:lavenderblush'>
           <!--StageViewport-->
           <div class='embed-responsive embed-responsive-16by9'></div>
         </div>
 
-        <div class='col-sm-3' style='background-color:lavender'>
+        <div class='col-sm-3 no-horizontal-padding' style='background-color:lavender'>
           <!--ChatLog-->
           <div class='embed-responsive wbh-8by9' id='chat-display'></div>
         </div>
