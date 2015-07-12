@@ -1,0 +1,11 @@
+.WidthByHeight(@width; @height) {
+  padding-bottom: 100% * @height / @width;
+}
+
+.wbh-16by9 {
+  .WidthByHeight(16,9);
+}
+
+.wbh-8by9 {
+  .WidthByHeight(8,9);
+}

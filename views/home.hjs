@@ -16,11 +16,11 @@
       </form>
     </div>
 
-    <div id='app-wrap'>
-      <div class='row '>
+    <div class='container-fluid' id='app-wrap'>
+      <div class='row'>
         <div class='col-sm-3' style='background-color:lavender'>
           <!--TranscriptLog-->
-          <div id='transcript-display'></div>
+          <div class='embed-responsive wbh-8by9' id='transcript-display'></div>
         </div>
 
         <div class='col-sm-6' style='background-color:lavenderblush'>
@@ -30,7 +30,7 @@
 
         <div class='col-sm-3' style='background-color:lavender'>
           <!--ChatLog-->
-          <div id='chat-display'></div>
+          <div class='embed-responsive wbh-8by9' id='chat-display'></div>
         </div>
 
         
