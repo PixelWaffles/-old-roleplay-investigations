@@ -17,14 +17,30 @@
     </div>
 
     <div id='app-wrap'>
-      <!--Chat-->
-      <div id='chat-wrap'>
-        <div class='chat-log-display' id='chat-display'></div>
-        <form id='send-message'>
-          <input size='64' maxLength= '128' id='message-box' placeholder='message' />
-          <input type='submit' />
-        </form>
+      <div class='row '>
+        <div class='col-sm-3' style='background-color:lavender'>
+          <!--TranscriptLog-->
+          <div id='transcript-display'></div>
+        </div>
+
+        <div class='col-sm-6' style='background-color:lavenderblush'>
+          <!--StageViewport-->
+          <div class='embed-responsive embed-responsive-16by9'></div>
+        </div>
+
+        <div class='col-sm-3' style='background-color:lavender'>
+          <!--ChatLog-->
+          <div id='chat-display'></div>
+        </div>
+
+        
       </div>
+
+      <!--MessageBox-->
+      <form id='send-message'>
+        <input size='64' maxLength= '128' id='message-box' placeholder='message' />
+        <input type='submit' />
+      </form>
 
       <!--Userlist-->
       <div id='userlist-wrap'>
