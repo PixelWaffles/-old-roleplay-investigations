@@ -35,6 +35,13 @@
           <div class='embed-responsive wbh-8by9'>
             <div class='fill-completely vertical-scroll' id='chat-display'></div>
           </div>
+          <!--Userlist-->
+          <div class='embed-responsive wbh-16by9'>
+            <div class='fill-completely'>
+              <p><b>Userlist</b></p>
+              <div id='userlist'></div>
+            </div>
+          </div>
         </div>
 
         
@@ -45,12 +52,6 @@
         <input size='64' maxLength= '128' id='message-box' placeholder='message' />
         <input type='submit' />
       </form>
-
-      <!--Userlist-->
-      <div id='userlist-wrap'>
-        <p><b>Userlist</b></p>
-        <div id='userlist'></div>
-      </div>
     </div>
 
     <!--Dependencies-->
