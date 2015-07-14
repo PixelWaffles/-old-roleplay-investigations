@@ -4,9 +4,6 @@
   </head>
 
   <body>
-    <button id='button-ping'>Ping!</button>
-    <p id='out-pong'></p>
-
     <!--Login-->
     <div id='login-wrap'>
       <p id='login-error-display'>&nbsp;</p>
@@ -60,7 +57,6 @@
     <script src='/socket.io/socket.io.js'></script>
 
     <!--scripts-->
-    <script src='/scripts/ping-pong.js'></script>
     <script src='/scripts/chat.js'></script>
     <script src='/scripts/rp/html/DynamicDiv.js'></script>
     <script src='/scripts/rp/html/ListDiv.js'></script>
