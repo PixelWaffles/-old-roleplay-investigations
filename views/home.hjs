@@ -31,11 +31,15 @@
           <div class='embed-responsive embed-responsive-16by9'></div>
           <div class='embed-responsive wbh-32by9'>
             <!--CharacterSpeechBox-->
-            <form class='row'>
-              <textarea class='col-sm-9' rows='2' id='character-speech-box'></textarea>
-              <input class='col-sm-1' type='button' value='speak' />
-              <input class='col-sm-2' type='button' value='thought' />
-            </form>
+            <div class='embed-responsive wbh-128by9'>
+              <form class='row'>
+                <textarea class='col-sm-9' rows='2' id='character-speech-box'></textarea>
+                <input class='col-sm-1' type='button' value='speak' />
+                <input class='col-sm-2' type='button' value='thought' />
+              </form>
+            </div>
+            <!--EmotionDashboard-->
+            <div class='fill-completely'></div>
           </div>
         </div>
 
