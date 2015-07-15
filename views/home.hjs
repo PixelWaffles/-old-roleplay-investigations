@@ -15,13 +15,13 @@
 
     <div class='container-fluid' id='app-wrap'>
       <div class='row'>
-        <div class='col-sm-3 no-horizontal-padding' style='background-color:lavender'>
+        <div class='col-sm-3 no-horizontal-padding'>
           <!--TranscriptLog-->
           <div class='embed-responsive wbh-8by9'>
-            <div class='fill-completely vertical-scroll' id='transcript-display'></div>
+            <div class='fill-completely vertical-scroll' style='background-color:lavender' id='transcript-display'></div>
           </div>
           <!--Castlist-->
-          <div class='embed-responsive wbh-16by9'>
+          <div class='embed-responsive wbh-16by9' style='background-color:honeydew'>
             <div class='fill-completely'>
               <p><b>Castlist</b></p>
               <div id='castlist'></div>
@@ -29,12 +29,12 @@
           </div>
         </div>
 
-        <div class='col-sm-6 no-horizontal-padding' style='background-color:lavenderblush'>
+        <div class='col-sm-6 no-horizontal-padding'>
           <!--StageViewport-->
-          <div class='embed-responsive embed-responsive-16by9'></div>
-          <div class='embed-responsive wbh-32by9'>
+          <div class='embed-responsive embed-responsive-16by9' style='background-color:lavenderblush'></div>
+          <div class='embed-responsive wbh-32by9' style='background-color:ivory'>
             <!--CharacterSpeechBox-->
-            <div class='embed-responsive wbh-128by9'>
+            <div class='embed-responsive wbh-128by9' style='background-color:lemonchiffon'>
               <form class='row'>
                 <textarea class='col-sm-9' rows='2' id='character-speech-box'></textarea>
                 <input class='col-sm-1' type='button' value='speak' />
@@ -46,13 +46,13 @@
           </div>
         </div>
 
-        <div class='col-sm-3 no-horizontal-padding' style='background-color:lavender'>
+        <div class='col-sm-3 no-horizontal-padding'>
           <!--ChatLog-->
-          <div class='embed-responsive wbh-8by9'>
+          <div class='embed-responsive wbh-8by9' style='background-color:lavender'>
             <div class='fill-completely vertical-scroll' id='chat-display'></div>
           </div>
 
-          <div class='embed-responsive wbh-16by9'>
+          <div class='embed-responsive wbh-16by9' style='background-color:honeydew'>
             <!--MessageBox-->
             <div class='row'>
               <form id='send-message'>
