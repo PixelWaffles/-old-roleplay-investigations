@@ -29,7 +29,7 @@
         <div class='col-sm-6 no-horizontal-padding' style='background-color:lavenderblush'>
           <!--StageViewport-->
           <div class='embed-responsive embed-responsive-16by9'></div>
-          <div class='embed-responsive wbh-16by9'>
+          <div class='embed-responsive wbh-32by9'>
             <!--CharacterSpeechBox-->
             <form class='row'>
               <textarea class='col-sm-9' rows='2' id='character-speech-box'></textarea>
