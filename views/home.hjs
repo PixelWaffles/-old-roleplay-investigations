@@ -22,7 +22,10 @@
           </div>
           <!--Castlist-->
           <div class='embed-responsive wbh-16by9'>
-            <div class='fill-completely' id='castlist'></div>
+            <div class='fill-completely'>
+              <p><b>Castlist</b></p>
+              <div id='castlist'></div>
+            </div>
           </div>
         </div>
 
