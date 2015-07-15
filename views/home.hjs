@@ -29,6 +29,14 @@
         <div class='col-sm-6 no-horizontal-padding' style='background-color:lavenderblush'>
           <!--StageViewport-->
           <div class='embed-responsive embed-responsive-16by9'></div>
+          <div class='embed-responsive wbh-16by9'>
+            <!--CharacterSpeechBox-->
+            <form class='row'>
+              <textarea class='col-sm-9' rows='2' id='character-speech-box'></textarea>
+              <input class='col-sm-1' type='button' value='speak' />
+              <input class='col-sm-2' type='button' value='thought' />
+            </form>
+          </div>
         </div>
 
         <div class='col-sm-3 no-horizontal-padding' style='background-color:lavender'>
