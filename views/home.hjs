@@ -35,10 +35,10 @@
 
           <div class='embed-responsive wbh-16by9'>
             <!--MessageBox-->
-            <div>
+            <div class='row'>
               <form id='send-message'>
-                <input maxLength= '128' id='message-box' placeholder='message' />
-                <input type='submit' />
+                <input class='col-sm-10' maxLength= '128' id='message-box' placeholder='message' />
+                <input class='col-sm-2' type='submit' />
               </form>
             </div>
             <!--Userlist-->
