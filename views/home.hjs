@@ -20,6 +20,10 @@
           <div class='embed-responsive wbh-8by9'>
             <div class='fill-completely vertical-scroll' id='transcript-display'></div>
           </div>
+          <!--Castlist-->
+          <div class='embed-responsive wbh-16by9'>
+            <div class='fill-completely' id='castlist'></div>
+          </div>
         </div>
 
         <div class='col-sm-6 no-horizontal-padding' style='background-color:lavenderblush'>
