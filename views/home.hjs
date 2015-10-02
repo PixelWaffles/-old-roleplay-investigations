@@ -1,11 +1,9 @@
 <html>
   <head>
+    <link rel='stylesheet' type='text/css' href='styles/main.css'
   </head>
 
   <body>
-    <button id='button-ping'>Ping!</button>
-    <p id='out-pong'></p>
-
     <!--Login-->
     <div id='login-wrap'>
       <p id='login-error-display'>&nbsp;</p>
@@ -15,27 +13,71 @@
       </form>
     </div>
 
-    <!--Chat-->
-    <div id='chat-wrap'>
-      <div class='chat-log-display' id='chat-display'></div>
-      <form id='send-message'>
-        <input size='64' maxLength= '128' id='message-box' placeholder='message' />
-        <input type='submit' />
-      </form>
-    </div>
+    <div class='container-fluid' id='app-wrap'>
+      <div class='row'>
+        <div class='col-sm-3 no-horizontal-padding'>
+          <!--TranscriptLog-->
+          <div class='embed-responsive wbh-8by9'>
+            <div class='fill-completely vertical-scroll' style='background-color:lavender' id='transcript-display'></div>
+          </div>
+          <!--Castlist-->
+          <div class='embed-responsive wbh-16by9' style='background-color:honeydew'>
+            <div class='fill-completely'>
+              <p><b>Castlist</b></p>
+              <div id='castlist'></div>
+            </div>
+          </div>
+        </div>
 
-    <!--Userlist-->
-    <div id='userlist-wrap'>
-      <p><b>Userlist</b></p>
-      <div id='userlist'></div>
+        <div class='col-sm-6 no-horizontal-padding'>
+          <!--StageViewport-->
+          <div class='embed-responsive embed-responsive-16by9' style='background-color:lavenderblush'></div>
+          <div class='embed-responsive wbh-32by9' style='background-color:ivory'>
+            <!--CharacterSpeechBox-->
+            <div class='embed-responsive wbh-128by9' style='background-color:lemonchiffon'>
+              <form class='row'>
+                <textarea class='col-sm-10' rows='2' id='character-speech-box'></textarea>
+                <div class='col-sm-2'>
+                  <input class='fill-horizontal' type='button' value='speak' />
+                  <input class='fill-horizontal' type='button' value='think' />
+                </div>
+              </form>
+            </div>
+            <!--EmotionDashboard-->
+            <div class='fill-completely'></div>
+          </div>
+        </div>
+
+        <div class='col-sm-3 no-horizontal-padding'>
+          <!--ChatLog-->
+          <div class='embed-responsive wbh-8by9' style='background-color:lavender'>
+            <div class='fill-completely vertical-scroll' id='chat-display'></div>
+          </div>
+
+          <div class='embed-responsive wbh-16by9' style='background-color:honeydew'>
+            <!--MessageBox-->
+            <div class='row'>
+              <form id='send-message'>
+                <input class='col-sm-10' maxLength= '128' id='message-box' placeholder='message' />
+                <input class='col-sm-2' type='submit' />
+              </form>
+            </div>
+            <!--Userlist-->
+            <div class='fill-completely'>
+              <p><b>Userlist</b></p>
+              <div id='userlist'></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!--Dependencies-->
     <script src='bower_components/jQuery/dist/jquery.js'></script>
+    <script src='bower_components/bootstrap/dist/js/bootstrap.js'></script>
     <script src='/socket.io/socket.io.js'></script>
 
     <!--scripts-->
-    <script src='/scripts/ping-pong.js'></script>
     <script src='/scripts/chat.js'></script>
     <script src='/scripts/rp/html/DynamicDiv.js'></script>
     <script src='/scripts/rp/html/ListDiv.js'></script>
