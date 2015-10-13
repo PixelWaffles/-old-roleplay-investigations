@@ -18,6 +18,7 @@ function handleMessage(_socket) {
       'time': Date.now() // Time of Server on Message Sent.
     , 'user': escape(_socket['$user'])
     , 'message': escape(_data.message)
+    , 'commands': _data.commands
     });
     return;
   });

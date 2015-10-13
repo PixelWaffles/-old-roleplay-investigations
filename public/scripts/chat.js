@@ -38,12 +38,10 @@ $(document).ready( function($) {
   $messageForm.submit(function(_event) {
     _event.preventDefault();
 
-    var message = $messageBox.val();
+    var message = rp.msgCmd.parser.parseMessage($messageBox.val());
+    message['time'] = Date.now();
 
-    socket.emit('message-server', {
-      'time': Date.now()
-    , 'message': message
-    });
+    socket.emit('message-server', message);
     
     $messageBox.val('');
   });
