@@ -38,8 +38,8 @@ rp.msgCmd.parser = new function() {
     }
     
     return {
-      message: message
-    , commands: commands
+      'message': message
+    , 'commands': commands
     };
 
   };
