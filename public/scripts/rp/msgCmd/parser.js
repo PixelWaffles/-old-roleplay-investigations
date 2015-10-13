@@ -8,15 +8,37 @@ rp.msgCmd = rp.msgCmd || {};
 rp.msgCmd.parser = new function() {
   "use strict";
   
+  this.commandBeginSymbol = '[';
+  this.commandEndSymbol = ']';
+  
   this.parseMessage = function(_message) {
     var message = _message;
     var commands = [];
     
-    // TODO Write parser.
+    var commandEndPointer = -1;
+    var commandBeginPointer = -1;
+    var parsingCommand = null;
+    
+    while(true) {
+      commandBeginPointer = message.indexOf(this.commandBeginSymbol);
+      commandEndPointer = message.indexOf(this.commandEndSymbol, commandBeginPointer);
+      
+      if(commandBeginPointer === -1) {
+        break;
+      }
+      
+      parsingCommand = new rp.msgCmd.Command();
+      
+      parsingCommand.messageStringIndex = commandBeginPointer;
+      parsingCommand.cmd = message.substring( commandBeginPointer + 1, commandEndPointer - 1 );
+      message = message.substring( 0, commandBeginPointer ) + message.substring(commandEndPointer);
+      
+      // TODO split parameters from command.
+    }
     
     return {
-      message: message,
-      commands: commands
+      message: message
+    , commands: commands
     };
 
   };

@@ -6,7 +6,8 @@ rp.msgCmd = rp.msgCmd || {};
 rp.msgCmd.Command = function(){
   "use strict";
   
-  this.name = "";
+  this.cmd = "";
+  this.messageStringIndex = -1;
   this.parameters = {};
   
   return;
