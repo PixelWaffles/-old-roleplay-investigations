@@ -32,6 +32,7 @@ rp.msgCmd.parser = new function() {
       parsingCommand.messageStringIndex = commandBeginPointer;
       parsingCommand.cmd = message.substring( commandBeginPointer + 1, commandEndPointer - 1 );
       message = message.substring( 0, commandBeginPointer ) + message.substring(commandEndPointer);
+      commands.push(parsingCommand);
       
       // TODO split parameters from command.
     }
