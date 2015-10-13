@@ -7,8 +7,17 @@ rp.msgCmd = rp.msgCmd || {};
 // Singleton
 rp.msgCmd.parser = new function() {
   "use strict";
-  this.parse = function(_para) {
+  
+  this.parseMessage = function(_message) {
+    var message = _message;
+    var commands = [];
+    
     // TODO Write parser.
-    return;
+    
+    return {
+      message: message,
+      commands: commands
+    };
+
   };
 };
