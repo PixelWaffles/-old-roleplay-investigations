@@ -81,5 +81,7 @@
     <script src='/scripts/chat.js'></script>
     <script src='/scripts/rp/html/DynamicDiv.js'></script>
     <script src='/scripts/rp/html/ListDiv.js'></script>
+    <script src='/scripts/rp/msgCmd/Command.js'></script>
+    <script src='/scripts/rp/msgCmd/parser.js'></script>
   </body>
 </html>
