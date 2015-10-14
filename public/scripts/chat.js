@@ -91,9 +91,8 @@ $(document).ready( function($) {
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' left' + '</b>' + '</p>');
     }
   });
-});
-
-function displayCommandsReceived(_data) {
+  
+  function displayCommandsReceived(_data) {
   var commandsHtml = '';
 
   for(var i = 0; i < _data.commands.length; i++) {
@@ -101,4 +100,5 @@ function displayCommandsReceived(_data) {
   }
 
   return commandsHtml;
-}
+  }
+});
