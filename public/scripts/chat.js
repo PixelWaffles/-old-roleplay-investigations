@@ -66,6 +66,10 @@ $(document).ready( function($) {
       $messageDisplay.append('<p>' + '<b>' + _data.error + '</b>' + '</p>');
       return;
     }
+    
+    if(_data.commands && _data.commands.length > 0) {
+      $messageDisplay.append( displayCommandsReceived(_data) );
+    }
 
     $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
   });
@@ -88,3 +92,13 @@ $(document).ready( function($) {
     }
   });
 });
+
+function displayCommandsReceived(_data) {
+  var commandsHtml = '';
+
+  for(var i = 0; i < _data.commands.length; i++) {
+    commandsHtml += '<p>' + '<i>' + 'Command ' + _data.commands[i].cmd + ' received from ' + _data.user + '</i>' + '</p>';
+  }
+
+  return commandsHtml;
+}
