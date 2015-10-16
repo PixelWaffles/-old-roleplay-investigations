@@ -96,22 +96,38 @@ $(document).ready( function($) {
     var commandsHtml = '';
     
     for(var i = 0; i < _data.commands.length; i++) {
+      commandsHtml +=
+        '<p>'
+      + '<i>'
+      + 'Command '
+      + _data.commands[i].cmd
+      + ' received from '
+      + _data.user
+      + ' '
+      + displayParameters(_data.commands[i].parameters)
+      + '.'
+      + '</i>'
+      + '</p>';
+    }
+
+    return commandsHtml;
+    
+    function displayParameters(_parameters) {
       var commandParameterInfo = '';
       
-      for(var p = 0; p < _data.commands[i].parameters.length; p++) {
-        if(p === 0) {
-          commandParameterInfo += ' with parameters ';
-        } else if(p + 1 === _data.commands[i].parameters.length) {
+      for(var i = 0; i < _parameters.length; i++) {
+        if(i === 0) {
+          commandParameterInfo += 'with parameters ';
+        } else if(i + 1 === _parameters.length) {
           commandParameterInfo += ' and ';
         } else {
           commandParameterInfo += ', ';
         }
         
-        commandParameterInfo += _data.commands[i].parameters[p];
+        commandParameterInfo += _parameters[i];
       }
-      commandsHtml += '<p>' + '<i>' + 'Command ' + _data.commands[i].cmd + ' received from ' + _data.user + commandParameterInfo + '.' + '</i>' + '</p>';
+      
+      return commandParameterInfo;
     }
-
-    return commandsHtml;
   }
 });
