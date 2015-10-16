@@ -96,7 +96,20 @@ $(document).ready( function($) {
   var commandsHtml = '';
 
   for(var i = 0; i < _data.commands.length; i++) {
-    commandsHtml += '<p>' + '<i>' + 'Command ' + _data.commands[i].cmd + ' received from ' + _data.user + '</i>' + '</p>';
+    var commandParameterInfo = '';
+    
+    for(var p = 0; p < _data.commands[i].parameters.length; p++) {
+      if(p === 0) {
+        commandParameterInfo += ' with parameters ';
+      } else if(p + 1 === _data.commands[i].parameters.length) {
+        commandParameterInfo += ' and ';
+      } else {
+        commandParameterInfo += ', ';
+      }
+      
+      commandParameterInfo += _data.commands[i].parameters[p];
+    }
+    commandsHtml += '<p>' + '<i>' + 'Command ' + _data.commands[i].cmd + ' received from ' + _data.user + commandParameterInfo + '.' + '</i>' + '</p>';
   }
 
   return commandsHtml;
