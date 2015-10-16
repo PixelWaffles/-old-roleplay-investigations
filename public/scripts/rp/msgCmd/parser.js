@@ -17,7 +17,6 @@ rp.msgCmd.parser = new function() {
     
     var commandEndPointer = -1;
     var commandBeginPointer = -1;
-    var parsingCommand = null;
     
     while(true) {
       commandBeginPointer = message.indexOf(this.commandBeginSymbol);
@@ -27,26 +26,39 @@ rp.msgCmd.parser = new function() {
         break;
       }
       
-      parsingCommand = new rp.msgCmd.Command();
+      var commandTag = '';
       
-      parsingCommand.messageStringIndex = commandBeginPointer;
-      
+      //extract command tags from message.
       if(commandEndPointer === -1){
-        parsingCommand.cmd = message.substring(commandBeginPointer + 1);
+        commandTag = message.substring(commandBeginPointer + 1);
         message = message.substring(0, commandBeginPointer);
       } else {
-        parsingCommand.cmd = message.substring(commandBeginPointer + 1, commandEndPointer);
+        commandTag = message.substring(commandBeginPointer + 1, commandEndPointer);
         message = message.substring(0, commandBeginPointer) + message.substring(commandEndPointer + 1);
       }
-      commands.push(parsingCommand);
       
-      // TODO split parameters from command.
+      commands.push( commandFromCommandTag(commandTag) );
     }
     
     return {
       'message': message
     , 'commands': commands
     };
+    
+    function commandFromCommandTag(_commandTag) {
+      var returningCommand = new rp.msgCmd.Command();
+      var commandTagElements = _commandTag.split(' ');
+      
+      for(var i = 0; i < commandTagElements.length; i++) {
+        if(i === 0) {
+          returningCommand.cmd = commandTagElements[i];
+        } else {
+          returningCommand.parameters.push(commandTagElements[i]);
+        }
+      }
+      
+      return returningCommand;
+    }
 
   };
 };

@@ -8,7 +8,7 @@ rp.msgCmd.Command = function(){
   
   this.cmd = "";
   this.messageStringIndex = -1;
-  this.parameters = {};
+  this.parameters = [];
   
   return;
 };
