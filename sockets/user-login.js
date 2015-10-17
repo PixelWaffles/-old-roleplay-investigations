@@ -1,8 +1,6 @@
 var io = require('./io');
 var events = require('../events');
 
-var escape = require('escape-html');
-
 function login(_user)
 {
   if(_user.length <= 0) {
