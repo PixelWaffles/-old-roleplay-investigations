@@ -47,6 +47,6 @@ function handleLogin(_socket) {
   });
 
   return;
-};
+}
 
 module.exports = handleLogin;

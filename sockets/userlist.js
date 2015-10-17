@@ -7,7 +7,7 @@ function sendUserlistOnConnect(_socket) {
   });
 
   return;
-};
+}
 
 function getUserlist() {
   var users = [];
@@ -25,6 +25,6 @@ function getUserlist() {
   }
 
   return users;
-};
+}
 
 module.exports = sendUserlistOnConnect;
