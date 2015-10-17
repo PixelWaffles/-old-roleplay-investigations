@@ -7,12 +7,12 @@ function sendUserlistOnConnect(_socket) {
   });
 
   return;
-};
+}
 
 function getUserlist() {
   var users = [];
 
-  for(socketId in io.engine.clients) {
+  for(var socketId in io.engine.clients) {
     var socket = io.sockets.connected[socketId];
 
     if(socket['$user']) {
@@ -25,6 +25,6 @@ function getUserlist() {
   }
 
   return users;
-};
+}
 
 module.exports = sendUserlistOnConnect;

@@ -1,8 +1,6 @@
 var io = require('./io');
 var events = require('../events');
 
-var escape = require('escape-html');
-
 function login(_user)
 {
   if(_user.length <= 0) {
@@ -12,7 +10,7 @@ function login(_user)
     , 'message': 'User login unsuccessful. User field is empty.'
     };
   }
-  for(socketId in io.engine.clients) {
+  for(var socketId in io.engine.clients) {
     var socket = io.sockets.connected[socketId];
     
     if(socket['$user'] === _user) {
@@ -47,6 +45,6 @@ function handleLogin(_socket) {
   });
 
   return;
-};
+}
 
 module.exports = handleLogin;

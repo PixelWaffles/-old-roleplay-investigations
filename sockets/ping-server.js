@@ -9,6 +9,6 @@ function handlePing(_socket) {
   });
 
   return;
-};
+}
 
 module.exports = handlePing;
