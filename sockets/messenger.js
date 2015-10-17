@@ -24,6 +24,6 @@ function handleMessage(_socket) {
   });
 
   return;
-};
+}
 
 module.exports = handleMessage;

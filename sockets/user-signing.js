@@ -11,7 +11,7 @@ function broadcastSigning(_socket) {
     return;
   });
   return;
-};
+}
 
 function broadcastSignInSuccessful(_user) {
   io.sockets.emit('user-signing', {
@@ -23,7 +23,7 @@ function broadcastSignInSuccessful(_user) {
   console.log("User " + _user + " signed in successful.");
 
   return;
-};
+}
 
 function broadcastSignOut(_user) {
   io.sockets.emit('user-signing', {
@@ -35,6 +35,6 @@ function broadcastSignOut(_user) {
   console.log("User " + _user + " signed out.");
 
   return;
-};
+}
 
 module.exports = broadcastSigning;

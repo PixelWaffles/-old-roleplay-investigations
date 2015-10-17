@@ -12,7 +12,7 @@ io.on('connection', function(_socket) {
   );
 
   require('./ping-server')(_socket);
-  require('./messager')(_socket);
+  require('./messenger')(_socket);
   require('./user-login')(_socket);
   require('./user-signing')(_socket);
   require('./userlist')(_socket);

@@ -1,8 +1,10 @@
-/*
- * script dependencies
- *
- * jQuery
- * socket.io
+/* globals
+ * - io
+ */
+
+/* script dependencies
+ * - jQuery
+ * - socket.io
  */
 
 $(document).ready( function($) {
