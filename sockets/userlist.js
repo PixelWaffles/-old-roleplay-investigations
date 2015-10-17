@@ -12,7 +12,7 @@ function sendUserlistOnConnect(_socket) {
 function getUserlist() {
   var users = [];
 
-  for(socketId in io.engine.clients) {
+  for(var socketId in io.engine.clients) {
     var socket = io.sockets.connected[socketId];
 
     if(socket['$user']) {
