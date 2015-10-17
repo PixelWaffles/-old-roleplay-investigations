@@ -71,7 +71,9 @@ $(document).ready( function($) {
     }
     
     if(_data.commands && _data.commands.length > 0) {
-      $messageDisplay.append( displayCommandsReceived(_data) );
+      for(var command in _data.commands) {
+        $messageDisplay.append( rp.msgCmd.cmdFunc.test(_data, command) );
+      }
     }
 
     $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
@@ -94,43 +96,4 @@ $(document).ready( function($) {
       $messageDisplay.append('<p>' + '<b>' + _data.user + ' left' + '</b>' + '</p>');
     }
   });
-  
-  function displayCommandsReceived(_data) {
-    var commandsHtml = '';
-    
-    for(var i = 0; i < _data.commands.length; i++) {
-      commandsHtml +=
-        '<p>'
-      + '<i>'
-      + 'Command '
-      + _data.commands[i].cmd
-      + ' received from '
-      + _data.user
-      + ' '
-      + displayParameters(_data.commands[i].parameters)
-      + '.'
-      + '</i>'
-      + '</p>';
-    }
-
-    return commandsHtml;
-    
-    function displayParameters(_parameters) {
-      var commandParameterInfo = '';
-      
-      for(var i = 0; i < _parameters.length; i++) {
-        if(i === 0) {
-          commandParameterInfo += 'with parameters ';
-        } else if(i + 1 === _parameters.length) {
-          commandParameterInfo += ' and ';
-        } else {
-          commandParameterInfo += ', ';
-        }
-        
-        commandParameterInfo += _parameters[i];
-      }
-      
-      return commandParameterInfo;
-    }
-  }
 });
