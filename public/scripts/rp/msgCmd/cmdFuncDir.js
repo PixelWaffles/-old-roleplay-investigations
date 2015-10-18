@@ -9,7 +9,7 @@ rp.msgCmd.cmdFuncDir = new function() {
   "use strict";
   
   this.findCommandFunction = function(_command) {
-    return rp.msgCmd.cmdFunc[_command];
+    return rp.msgCmd.cmdFunc[_command.cmd];
   };
   
   this.executeCommandFunction = function(_parentMessage, _command) {
