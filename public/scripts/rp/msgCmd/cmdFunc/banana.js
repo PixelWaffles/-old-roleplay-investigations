@@ -5,19 +5,16 @@ var rp = rp || {};
 rp.msgCmd = rp.msgCmd || {};
 rp.msgCmd.cmdFunc = rp.msgCmd.cmdFunc || {};
 
-rp.msgCmd.cmdFunc.test = function(_parentMessage, _commandSelf) {
+rp.msgCmd.cmdFunc.banana = function(_parentMessage, _commandSelf) {
     var commandsHtml = '';
     
     commandsHtml +=
       '<p>'
     + '<i>'
-    + 'Command '
-    + _commandSelf.cmd
-    + ' received from '
+    + 'Thank you for the banana '
     + _parentMessage.user
-    + ' '
+    + '! '
     + displayParameters(_commandSelf.parameters)
-    + '.'
     + '</i>'
     + '</p>';
     
@@ -28,7 +25,11 @@ rp.msgCmd.cmdFunc.test = function(_parentMessage, _commandSelf) {
       
       for(var i = 0; i < _parameters.length; i++) {
         if(i === 0) {
-          commandParameterInfo += 'with parameters ';
+          if(_parameters.length > 1) {
+            commandParameterInfo += 'They also sent the following parameters: ';
+          } else {
+            commandParameterInfo += 'They also sent the following parameter: ';
+          }
         } else if(i + 1 === _parameters.length) {
           commandParameterInfo += ' and ';
         } else {
@@ -38,6 +39,9 @@ rp.msgCmd.cmdFunc.test = function(_parentMessage, _commandSelf) {
         commandParameterInfo += _parameters[i];
       }
       
+      if(_parameters.length > 0) {
+        commandParameterInfo += '.';
+      }
       return commandParameterInfo;
     }
 };
