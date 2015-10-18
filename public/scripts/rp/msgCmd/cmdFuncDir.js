@@ -14,6 +14,10 @@ rp.msgCmd.cmdFuncDir = new function() {
   
   this.executeCommandFunction = function(_parentMessage, _command) {
     var executingCommand = this.findCommandFunction(_command);
-    return executingCommand(_parentMessage, _command);
+    if(executingCommand) {
+      return executingCommand(_parentMessage, _command);
+    }
+    
+    return;
   };
 };
