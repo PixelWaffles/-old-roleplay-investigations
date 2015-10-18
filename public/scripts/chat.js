@@ -70,9 +70,9 @@ $(document).ready( function($) {
       return;
     }
     
-    if(_data.commands && _data.commands.length > 0) {
-      for(var command in _data.commands) {
-        $messageDisplay.append( rp.msgCmd.cmdFunc.test(_data, command) );
+    if(_data.commands) {
+      for(var i = 0; i < _data.commands.length; i++) {
+        $messageDisplay.append( rp.msgCmd.cmdFunc.test(_data, _data.commands[i]) );
       }
     }
 
