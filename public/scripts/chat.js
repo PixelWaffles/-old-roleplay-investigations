@@ -72,7 +72,7 @@ $(document).ready( function($) {
     
     if(_data.commands) {
       for(var i = 0; i < _data.commands.length; i++) {
-        $messageDisplay.append( rp.msgCmd.cmdFunc.test(_data, _data.commands[i]) );
+        $messageDisplay.append( rp.msgCmd.cmdFuncDir.executeCommandFunction(_data, _data.commands[i]) );
       }
     }
 
