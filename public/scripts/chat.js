@@ -76,7 +76,9 @@ $(document).ready( function($) {
       }
     }
 
-    $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+    if(_data.message) {
+      $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+    }
   });
 
   socket.on('userlist', function(_data) {
