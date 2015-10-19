@@ -41,12 +41,10 @@ $(document).ready( function($) {
   $messageForm.submit(function(_event) {
     _event.preventDefault();
 
-    var message = $messageBox.val();
+    var message = rp.msgCmd.parser.parseMessage($messageBox.val());
+    message['time'] = Date.now();
 
-    socket.emit('message-server', {
-      'time': Date.now()
-    , 'message': message
-    });
+    socket.emit('message-server', message);
     
     $messageBox.val('');
   });
@@ -71,8 +69,16 @@ $(document).ready( function($) {
       $messageDisplay.append('<p>' + '<b>' + _data.error + '</b>' + '</p>');
       return;
     }
+    
+    if(_data.commands) {
+      for(var i = 0; i < _data.commands.length; i++) {
+        $messageDisplay.append( rp.msgCmd.cmdFuncDir.executeCommandFunction(_data, _data.commands[i]) );
+      }
+    }
 
-    $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+    if(_data.message) {
+      $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+    }
   });
 
   socket.on('userlist', function(_data) {
