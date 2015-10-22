@@ -41,7 +41,7 @@ $(document).ready( function($) {
   $messageForm.submit(function(_event) {
     _event.preventDefault();
 
-    var message = rp.msgCmd.parser.parseMessage($messageBox.val());
+    var message = rp.msgCmd.parser.parseMessage( '[channel user]' + $messageBox.val() );
     message['time'] = Date.now();
 
     socket.emit('message-server', message);
