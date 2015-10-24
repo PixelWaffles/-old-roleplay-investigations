@@ -8,6 +8,7 @@ function handleMessage(_socket) {
     if(!_socket['$user']) {
       _socket.emit('message-client', {
         'time': Date.now()
+      , 'channel': 'server'
       , 'error': 'ERR_NOT_LOGGED_IN'
       });
       
