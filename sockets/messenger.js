@@ -17,6 +17,7 @@ function handleMessage(_socket) {
     }
     
     var messageToBroadcast = createMessageToBroadcast();
+    getMessageChannel();
     
     
 
@@ -30,6 +31,18 @@ function handleMessage(_socket) {
       , 'message': escape(_data.message)
       , 'commands': _data.commands
       };
+    }
+    
+    function getMessageChannel() {
+      var channelCommand = _.find(messageToBroadcast.commands, function(_command){return _command.cmd === 'channel'});
+      var allowedChannels = ['user', 'character', 'stage'];
+      
+      if( channelCommand && _.contains(allowedChannels, channelCommand.parameters[0]) ) {
+        messageToBroadcast['channel'] = channelCommand.parameters[0];
+      }
+      
+      messageToBroadcast.commands = _.filter(messageToBroadcast.commands, function(_command){return _command.cmd !== 'channel'});
+      return;
     }
   });
 
