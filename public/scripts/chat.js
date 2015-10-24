@@ -77,7 +77,9 @@ $(document).ready( function($) {
     }
 
     if(_data.message) {
-      $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+      if(_data.channel === 'user') {
+        $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+      }
     }
   });
 
