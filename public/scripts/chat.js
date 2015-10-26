@@ -15,6 +15,8 @@ $(document).ready( function($) {
     , $appWrap = $('#app-wrap')
     , $loginError = $('#login-error-display')
     , $messageForm = $('#send-message')
+    , $characterMessageForm = $('#send-character-message')
+    , $characterMessageBox = $('#character-message-box')
     , $loginForm = $('#send-login')
     , $usernameBox = $('#username-box')
     , $messageBox = $('#message-box')
@@ -40,14 +42,30 @@ $(document).ready( function($) {
 
   $messageForm.submit(function(_event) {
     _event.preventDefault();
-
-    var message = rp.msgCmd.parser.parseMessage( '[channel user]' + $messageBox.val() );
-    message['time'] = Date.now();
-
-    socket.emit('message-server', message);
-    
-    $messageBox.val('');
+    sendMessage('user', $messageBox);
+    return;
   });
+  
+  $characterMessageForm.submit(function(_event) {
+    _event.preventDefault();
+    sendMessage('character', $characterMessageBox);
+    return;
+  });
+  
+  function sendMessage(_channel, _$messageBox) {
+    var message = rp.msgCmd.parser.parseMessage(_$messageBox.val());
+    _$messageBox.val('');
+    
+    var channelCommand = new rp.msgCmd.Command();
+    channelCommand.cmd = 'channel';
+    channelCommand.parameters.push(_channel);
+    
+    message.commands.push(channelCommand);
+    message['time'] = Date.now();
+    
+    socket.emit('message-server', message);
+    return;
+  }
 
   // Userlist
   var userlist = new rp.html.ListDiv($userlist.prop('id'), {});

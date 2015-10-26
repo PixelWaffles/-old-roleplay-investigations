@@ -35,10 +35,10 @@
           <div class='embed-responsive wbh-32by9' style='background-color:ivory'>
             <!--CharacterSpeechBox-->
             <div class='embed-responsive wbh-128by9' style='background-color:lemonchiffon'>
-              <form class='row'>
-                <textarea class='col-sm-10' rows='2' id='character-speech-box'></textarea>
+              <form id='send-character-message' class='row'>
+                <textarea class='col-sm-10' rows='2' id='character-message-box'></textarea>
                 <div class='col-sm-2'>
-                  <input class='fill-horizontal' type='button' value='speak' />
+                  <input class='fill-horizontal' type='submit' value='speak' />
                   <input class='fill-horizontal' type='button' value='think' />
                 </div>
               </form>
