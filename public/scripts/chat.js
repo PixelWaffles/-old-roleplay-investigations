@@ -21,6 +21,7 @@ $(document).ready( function($) {
     , $usernameBox = $('#username-box')
     , $messageBox = $('#message-box')
     , $messageDisplay = $('#chat-display')
+    , $transcriptDisplay = $('#transcript-display')
     , $userlist = $('#userlist')
   ;
 
@@ -97,6 +98,8 @@ $(document).ready( function($) {
     if(_data.message) {
       if(_data.channel === 'user') {
         $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+      } else if(_data.channel === 'character') {
+        $transcriptDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
       }
     }
   });

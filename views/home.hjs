@@ -18,7 +18,7 @@
         <div class='col-sm-3 no-horizontal-padding'>
           <!--TranscriptLog-->
           <div class='embed-responsive wbh-8by9'>
-            <div class='fill-completely vertical-scroll' style='background-color:lavender' id='transcript-display'></div>
+            <div class='fill-completely vertical-scroll' id='transcript-display' style='background-color:lavender' id='transcript-display'></div>
           </div>
           <!--Castlist-->
           <div class='embed-responsive wbh-16by9' style='background-color:honeydew'>
