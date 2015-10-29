@@ -53,6 +53,15 @@ $(document).ready( function($) {
     return;
   });
   
+  $characterMessageBox.keydown(function(_event) {
+    if(_event.keyCode === 13) { // If space is pressed.
+      _event.preventDefault();
+      $characterMessageForm.submit();
+    }
+    
+    return;
+  });
+  
   function sendMessage(_channel, _$messageBox) {
     var message = rp.msgCmd.parser.parseMessage(_$messageBox.val());
     _$messageBox.val('');
