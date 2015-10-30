@@ -11,12 +11,12 @@ rp.msg.chat = new function(){
   this.$chatDisplay = $('#chat-display');
   this.$transcriptDisplay = $('#transcript-display');
   
-  this.pushMessage(_channel, _message) {
+  this.pushMessage = function(_channel, _message) {
     if(_channel === 'user' || _channel === 'server') {
-      $chatDisplay.append(_message);
+      this.$chatDisplay.append(_message);
     } else if(_channel === 'character') {
-      $transcriptDisplay.append(_message);
+      this.$transcriptDisplay.append(_message);
     }
     return;
-  }
+  };
 };
