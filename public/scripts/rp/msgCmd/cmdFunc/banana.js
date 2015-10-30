@@ -18,7 +18,9 @@ rp.msgCmd.cmdFunc.banana = function(_parentMessage, _commandSelf) {
     + '</i>'
     + '</p>';
     
-    return commandsHtml;
+    rp.msg.chat.pushMessage('user', commandsHtml);
+    
+    return;
     
     function displayParameters(_parameters) {
       var commandParameterInfo = '';
