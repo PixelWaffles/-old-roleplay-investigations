@@ -15,10 +15,13 @@ $(document).ready( function($) {
     , $appWrap = $('#app-wrap')
     , $loginError = $('#login-error-display')
     , $messageForm = $('#send-message')
+    , $characterMessageForm = $('#send-character-message')
+    , $characterMessageBox = $('#character-message-box')
     , $loginForm = $('#send-login')
     , $usernameBox = $('#username-box')
     , $messageBox = $('#message-box')
     , $messageDisplay = $('#chat-display')
+    , $transcriptDisplay = $('#transcript-display')
     , $userlist = $('#userlist')
   ;
 
@@ -40,14 +43,39 @@ $(document).ready( function($) {
 
   $messageForm.submit(function(_event) {
     _event.preventDefault();
-
-    var message = rp.msgCmd.parser.parseMessage($messageBox.val());
-    message['time'] = Date.now();
-
-    socket.emit('message-server', message);
-    
-    $messageBox.val('');
+    sendMessage('user', $messageBox);
+    return;
   });
+  
+  $characterMessageForm.submit(function(_event) {
+    _event.preventDefault();
+    sendMessage('character', $characterMessageBox);
+    return;
+  });
+  
+  $characterMessageBox.keydown(function(_event) {
+    if(_event.keyCode === 13) { // If space is pressed.
+      _event.preventDefault();
+      $characterMessageForm.submit();
+    }
+    
+    return;
+  });
+  
+  function sendMessage(_channel, _$messageBox) {
+    var message = rp.msgCmd.parser.parseMessage(_$messageBox.val());
+    _$messageBox.val('');
+    
+    var channelCommand = new rp.msgCmd.Command();
+    channelCommand.cmd = 'channel';
+    channelCommand.parameters.push(_channel);
+    
+    message.commands.push(channelCommand);
+    message['time'] = Date.now();
+    
+    socket.emit('message-server', message);
+    return;
+  }
 
   // Userlist
   var userlist = new rp.html.ListDiv($userlist.prop('id'), {});
@@ -72,12 +100,16 @@ $(document).ready( function($) {
     
     if(_data.commands) {
       for(var i = 0; i < _data.commands.length; i++) {
-        $messageDisplay.append( rp.msgCmd.cmdFuncDir.executeCommandFunction(_data, _data.commands[i]) );
+        rp.msgCmd.cmdFuncDir.executeCommandFunction(_data, _data.commands[i]);
       }
     }
 
     if(_data.message) {
-      $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+      if(_data.channel === 'user') {
+        $messageDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+      } else if(_data.channel === 'character') {
+        $transcriptDisplay.append('<p>' + '<b>' + _data.user + ': ' + '</b>' + _data.message + '</p>');
+      }
     }
   });
 
