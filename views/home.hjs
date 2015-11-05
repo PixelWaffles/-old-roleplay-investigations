@@ -80,6 +80,7 @@
 
     <!--scripts-->
     <script src='/scripts/chat.js'></script>
+    <script src='/scripts/stage-viewport.js'></script>
     <script src='/scripts/rp/html/DynamicDiv.js'></script>
     <script src='/scripts/rp/html/ListDiv.js'></script>
     <script src='/scripts/rp/msg/chat.js'></script>
