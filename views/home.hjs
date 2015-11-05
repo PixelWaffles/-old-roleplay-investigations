@@ -31,7 +31,7 @@
 
         <div class='col-sm-6 no-horizontal-padding'>
           <!--StageViewport-->
-          <div class='embed-responsive embed-responsive-16by9' style='background-color:lavenderblush'></div>
+          <div class='embed-responsive embed-responsive-16by9' id='stage-viewport' style='background-color:lavenderblush'></div>
           <div class='embed-responsive wbh-32by9' style='background-color:ivory'>
             <!--CharacterSpeechBox-->
             <div class='embed-responsive wbh-128by9' style='background-color:lemonchiffon'>
@@ -88,5 +88,6 @@
     <script src='/scripts/rp/msgCmd/cmdFuncDir.js'></script>
     <script src='/scripts/rp/msgCmd/cmdFunc/banana.js'></script>
     <script src='/scripts/rp/msgCmd/cmdFunc/channel.js'></script>
+    <script src='/scripts/rp/phaser/game.js'></script>
   </body>
 </html>
