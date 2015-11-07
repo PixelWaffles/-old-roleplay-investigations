@@ -31,7 +31,7 @@
 
         <div class='col-sm-6 no-horizontal-padding'>
           <!--StageViewport-->
-          <div class='embed-responsive embed-responsive-16by9' style='background-color:lavenderblush'></div>
+          <div class='embed-responsive embed-responsive-16by9' id='stage-viewport' style='background-color:lavenderblush'></div>
           <div class='embed-responsive wbh-32by9' style='background-color:ivory'>
             <!--CharacterSpeechBox-->
             <div class='embed-responsive wbh-128by9' style='background-color:lemonchiffon'>
@@ -75,10 +75,12 @@
     <!--Dependencies-->
     <script src='bower_components/jQuery/dist/jquery.js'></script>
     <script src='bower_components/bootstrap/dist/js/bootstrap.js'></script>
+    <script src='bower_components/phaser/build/phaser.js'></script>
     <script src='/socket.io/socket.io.js'></script>
 
     <!--scripts-->
     <script src='/scripts/chat.js'></script>
+    <script src='/scripts/stage-viewport.js'></script>
     <script src='/scripts/rp/html/DynamicDiv.js'></script>
     <script src='/scripts/rp/html/ListDiv.js'></script>
     <script src='/scripts/rp/msg/chat.js'></script>
@@ -87,5 +89,6 @@
     <script src='/scripts/rp/msgCmd/cmdFuncDir.js'></script>
     <script src='/scripts/rp/msgCmd/cmdFunc/banana.js'></script>
     <script src='/scripts/rp/msgCmd/cmdFunc/channel.js'></script>
+    <script src='/scripts/rp/phaser/game.js'></script>
   </body>
 </html>
